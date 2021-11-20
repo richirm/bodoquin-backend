@@ -21,6 +21,17 @@ SELECT * FROM Mascotas;
 
 /******** INSERTAR REGISTROS *********/
 INSERT INTO Mascotas (idMascota, nombre, edad, precio, caracteristicas) VALUES (null, "Rufo", 5, 50, "Mediano, gris, jugueton");
+INSERT INTO Mascotas (idMascota, nombre, edad, precio, caracteristicas) VALUES (null, "Lulu", 8, 100, "Pequeño, blanco, silencioso");
 /*************************************/
 
+/****** ACTUALIZAMOS REGISTROS *******/
+UPDATE Mascotas SET nombre = "Rufino" WHERE idMascota = 1;
+/*************************************/
+
+/******** ELIMINAR REGISTROS *********/
+DELETE FROM Mascotas WHERE idMascota = 2;
+/*************************************/
+
+/****** SELECCIONAR REGISTROS ********/
 SELECT * FROM Mascotas;
+/*************************************/
