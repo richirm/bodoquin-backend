@@ -93,7 +93,6 @@ INSERT INTO Productos_Jugueteria (idProducto, nombreImg, nombreCategoria, nombre
 INSERT INTO Productos_Jugueteria (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "cuadro.jpg", "2-4", "cuadritos", "cuadritos de madera de colores para armar", 55.75, 0, "Fecha de vencimiento: 05/12/2023|Elaborado por: Juguetería mi mundo baby|Materiales: plastico, madera|Dimensiones: 50cm x 50cm");
 INSERT INTO Productos_Jugueteria (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "lonchera.jpg", "2-4", "lonchera", "lonchera de madera para llevar tus juguetes", 65.75, 0, "Fecha de vencimiento: 05/12/2023|Elaborado por: Juguetería mi mundo baby|Materiales: plastico, madera|Dimensiones: 50cm x 50cm");
 
-
 SELECT * FROM Productos_Jugueteria;
 /*************************************/
 
@@ -111,6 +110,7 @@ INSERT INTO Productos_Tecnologia (idProducto, nombreImg, nombreCategoria, nombre
 INSERT INTO Productos_Tecnologia (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "laptoph15.jpg", "HP", "Laptop hp 5", "8gb ram +  tb ssd + full hd", 2600, 0, "Fecha de produccion: 0//202,Elaborado por: bodoquin tecnologias|componentes: procesador intel| ram microsfot.");
 INSERT INTO Productos_Tecnologia (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "laptoplg.jpg", "LG", "Laptop lg", "2 GB RAM + 528 gb almacenamiento + uhd 4k", 2589, 0, "Fecha de produccion: 0//202,Elaborado por: bodoquin tecnologias|componentes: procesador intel| ram microsfot.");
 
+SELECT * FROM Productos_Tecnologia;
 /*************************************/
 
 /******** INSERTA DATA MODA **********/
@@ -127,4 +127,5 @@ INSERT INTO Productos_Moda (idProducto, nombreImg, nombreCategoria, nombreProduc
 INSERT INTO Productos_Moda (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "sombrero.jpg", "Sombrero", "Sombrero moderno de playa", "Lindo sombrero con excelentes acabados", 150, 0, "Fecha de vencimiento: 01/11/2025|Elaborado por: Boutique Bodoquin|Ingredientes: componentes de calidad.");
 INSERT INTO Productos_Moda (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "labial.jpg", "Labial", "Labial mate", "Sabor fresa y extra duracion", 50, 0, "Fecha de vencimiento: 01/11/2025|Elaborado por: Boutique Bodoquin|Ingredientes: componentes de calidad.");
 
+SELECT * FROM Productos_Moda;
 /*************************************/
