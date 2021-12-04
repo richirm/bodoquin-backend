@@ -27,7 +27,22 @@
       - Es una url de la aplicación del backend, cuyo objetivo es realizar una operación
         en específico, de tal forma que en algunos casos va a guardar datos en la
         base de datos, y otros casos va a devolver o responder con datos.
-      
+      - Metodos:
+          GET => Es un endpoint que sirve para obtener o devolver un registro(s) 
+                  de la base de datos (BD) hacia el frontend
+          POST => Es un endpoint que sirve para crear un registro en la base de datos (BD)
+          PUT => Es un endpoint que sirve para actualizar un registro en la base de datos (BD)
+          DELETE => Es un endpoint que sirve para eliminar un registro en la base de datos (BD) 
+      - Status:
+          200 => Endpoint ha sido exitoso
+          40X => Endpoint ha presentado errores (autenticación - 401 o autorización - 403)
+          50X => Endpoint ha presentado errores
+      - Partes:
+          Request: es la comunicación desde el frontend hacia el backend
+            Header => datos generales que envía el frontend
+            Payload => datos principales que envía el frontend
+             - query params: => parametros que se envían en la url del endpoint
+          Response: es la comunicación desde el backend hacia el frontend
       
 3. Versionado:
     Es un número que indica la versión, estado o caracteristicas actuales de

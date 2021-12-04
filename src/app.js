@@ -7,9 +7,35 @@ app.get('/alumnos', function (req, res) {
       nombre: 'Rufo',
       edad: 8,
       color: 'gris'
+    },
+    {
+      nombre: 'Pierina',
+      edad: 10,
+      color: 'negro'
+    },
+    {
+      nombre: 'Boby',
+      edad: 18,
+      color: 'blanco'
+    },
+    {
+      nombre: 'Ricardito',
+      edad: 7,
+      color: 'Blanco y marron'
+    },
+    {
+      nombre: 'Oso',
+      edad: 23,
+      color: 'Negro'
     }
   ];
-  res.send(alumnos);
+  
+  const alumnosFiltrados = alumnos.filter((alumno) => {
+    return alumno.edad >= Number(req.query.edadMin) && 
+           alumno.edad <= Number(req.query.edadMax);
+  });
+  
+  res.send(alumnosFiltrados);
 });
  
 app.get('/mascotas', function (req, res) {
