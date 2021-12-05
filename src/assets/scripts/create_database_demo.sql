@@ -15,6 +15,14 @@ CREATE TABLE Mascotas (
   caracteristicas varchar(1000),
   PRIMARY KEY (idMascota)
 );
+
+CREATE TABLE Alumnos (
+  idAlumno int NOT NULL AUTO_INCREMENT,
+  nombre varchar(255),
+  edad int,
+  color varchar(50),
+  PRIMARY KEY (idAlumno)
+);
 /*************************************/
 
 SELECT * FROM Mascotas;
@@ -22,6 +30,12 @@ SELECT * FROM Mascotas;
 /******** INSERTAR REGISTROS *********/
 INSERT INTO Mascotas (idMascota, nombre, edad, precio, caracteristicas) VALUES (null, "Rufo", 5, 50, "Mediano, gris, jugueton");
 INSERT INTO Mascotas (idMascota, nombre, edad, precio, caracteristicas) VALUES (null, "Lulu", 8, 100, "Pequeño, blanco, silencioso");
+
+INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Rufo", 8, "gris");
+INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Pierina", 10, "negro");
+INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Boby", 18, "blanco");
+INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Ricardito", 7, "Blanco y marron");
+INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Oso", 23, "Negro");
 /*************************************/
 
 /****** ACTUALIZAMOS REGISTROS *******/
