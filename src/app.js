@@ -77,7 +77,13 @@ app.get('/musicas', function (req, res) {
       genero: 'musicas'
     }
   ];
-  res.send(musicas);
+  
+  const musicasFiltrados = musicas.filter((musica) => {
+    return musica.precio >= Number(req.query.precioMin) && 
+           musica.precio <= Number(req.query.precioMax);
+  });
+  
+  res.send(musicasFiltrados);
 });
 
 app.get('/centrosTuristicos', function (req, res) {
