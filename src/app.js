@@ -109,30 +109,25 @@ app.get('/cursos', function (req, res) {
 });
 
 app.get('/comidas', function (req, res) {
-  const comidas = [
-    {
-      nombre: 'Cebiche',
-      precio: 29.90,
-      ingredientes: 'pescado'
-    },
-    {
-      nombre: 'Chaufa',
-      precio: 15.00,
-      ingredientes: 'pollo'
-    },
-    {
-      nombre: 'Carapúlcra',
-      precio: 18.00,
-      ingredientes: 'papa seca'
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `SELECT * FROM Comidas 
+                  WHERE precio >= ${req.query.precioMin} 
+                  AND precio <= ${req.query.precioMax}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send(result);
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
     }
-  ];
-  
-  const comidasFiltrados = comidas.filter((comida) => {
-	return comida.precio >= Number(req.query.precioMin) && 
-           comida.precio <= Number(req.query.precioMax);
-  });
-  
-  res.send(comidasFiltrados);
+  );  
 });
  
 app.listen(3000, function () {

@@ -23,6 +23,14 @@ CREATE TABLE Alumnos (
   color varchar(50),
   PRIMARY KEY (idAlumno)
 );
+
+CREATE TABLE Comidas (
+  idComida int NOT NULL AUTO_INCREMENT,
+  nombre varchar(255),
+  precio int,
+  ingrediente varchar(50),
+  PRIMARY KEY (idComida)
+);
 /*************************************/
 
 SELECT * FROM Mascotas;
