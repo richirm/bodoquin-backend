@@ -24,6 +24,14 @@ CREATE TABLE Alumnos (
   PRIMARY KEY (idAlumno)
 );
 
+CREATE TABLE Comidas (
+  idComida int NOT NULL AUTO_INCREMENT,
+  nombre varchar(255),
+  precio int,
+  ingrediente varchar(50),
+  PRIMARY KEY (idComida)
+);
+
 CREATE TABLE Musicas (
   idMusica int NOT NULL AUTO_INCREMENT,
   nombre varchar(255),
@@ -31,7 +39,6 @@ CREATE TABLE Musicas (
   genero varchar(50),
   PRIMARY KEY (idMusica)
 );
-
 /*************************************/
 
 SELECT * FROM Mascotas;
