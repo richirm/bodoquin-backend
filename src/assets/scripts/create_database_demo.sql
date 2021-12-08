@@ -53,6 +53,11 @@ INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Boby", 18, "b
 INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Ricardito", 7, "Blanco y marron");
 INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Oso", 23, "Negro");
 
+INSERT INTO Comidas (idComida, nombre, precio, ingrediente) VALUES (null, "cebiche", 29, "pescado");
+INSERT INTO Comidas (idComida, nombre, precio, ingrediente) VALUES (null, "chaufa", 19, "pollo");
+INSERT INTO Comidas (idComida, nombre, precio, ingrediente) VALUES (null, "carapulcra", 25, "papa seca");
+INSERT INTO Comidas (idComida, nombre, precio, ingrediente) VALUES (null, "aji de pollo", 9, "aji amarillo");
+
 INSERT INTO Musicas (idMusica, nombre, precio, genero) VALUES (null, "the Cranberries", 50, "rock");
 INSERT INTO Musicas (idMusica, nombre, precio, genero) VALUES (null, "monkey dance", 90, "pop");
 INSERT INTO Musicas (idMusica, nombre, precio, genero) VALUES (null, "inolvidable", 80, "balada");
