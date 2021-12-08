@@ -133,7 +133,13 @@ app.get('/comidas', function (req, res) {
       ingredientes: 'papa seca'
     }
   ];
-  res.send(comidas);
+  
+  const comidasFiltrados = comidas.filter((comida) => {
+	return comida.precio >= Number(req.query.precioMin) && 
+           comida.precio <= Number(req.query.precioMax);
+  });
+  
+  res.send(comidasFiltrados);
 });
  
 app.listen(3000, function () {
