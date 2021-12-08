@@ -1,41 +1,28 @@
 const express = require('express');
 const app = express();
+
+const database = require('./configuration/database');
  
 app.get('/alumnos', function (req, res) {
-  const alumnos = [
-    {
-      nombre: 'Rufo',
-      edad: 8,
-      color: 'gris'
-    },
-    {
-      nombre: 'Pierina',
-      edad: 10,
-      color: 'negro'
-    },
-    {
-      nombre: 'Boby',
-      edad: 18,
-      color: 'blanco'
-    },
-    {
-      nombre: 'Ricardito',
-      edad: 7,
-      color: 'Blanco y marron'
-    },
-    {
-      nombre: 'Oso',
-      edad: 23,
-      color: 'Negro'
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `SELECT * FROM Alumnos 
+                  WHERE edad >= ${req.query.edadMin} 
+                  AND edad <= ${req.query.edadMax}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send(result);
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
     }
-  ];
-  
-  const alumnosFiltrados = alumnos.filter((alumno) => {
-    return alumno.edad >= Number(req.query.edadMin) && 
-           alumno.edad <= Number(req.query.edadMax);
-  });
-  
-  res.send(alumnosFiltrados);
+  );  
 });
  
 app.get('/mascotas', function (req, res) {
@@ -77,7 +64,13 @@ app.get('/musicas', function (req, res) {
       genero: 'musicas'
     }
   ];
-  res.send(musicas);
+  
+  const musicasFiltrados = musicas.filter((musica) => {
+    return musica.precio >= Number(req.query.precioMin) && 
+           musica.precio <= Number(req.query.precioMax);
+  });
+  
+  res.send(musicasFiltrados);
 });
 
 app.get('/centrosTuristicos', function (req, res) {
