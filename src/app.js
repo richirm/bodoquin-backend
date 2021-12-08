@@ -47,30 +47,25 @@ app.get('/mascotas', function (req, res) {
 });
 
 app.get('/musicas', function (req, res) {
-  const musicas = [
-    {
-      nombre: 'the Cranberries ',
-      precio: 50,
-      genero: 'rock'
-    },
-    {
-      nombre: 'monkey dance',
-      precio: 90,
-      genero: 'pop'
-    },
-    {
-      nombre: 'inolvidable',
-      precio: 80,
-      genero: 'musicas'
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `SELECT * FROM Musicas 
+                  WHERE precio >= ${req.query.precioMin} 
+                  AND precio <= ${req.query.precioMax}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send(result);
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
     }
-  ];
-  
-  const musicasFiltrados = musicas.filter((musica) => {
-    return musica.precio >= Number(req.query.precioMin) && 
-           musica.precio <= Number(req.query.precioMax);
-  });
-  
-  res.send(musicasFiltrados);
+  );  
 });
 
 app.get('/centrosTuristicos', function (req, res) {

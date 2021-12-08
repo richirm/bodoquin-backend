@@ -23,6 +23,15 @@ CREATE TABLE Alumnos (
   color varchar(50),
   PRIMARY KEY (idAlumno)
 );
+
+CREATE TABLE Musicas (
+  idMusica int NOT NULL AUTO_INCREMENT,
+  nombre varchar(255),
+  precio int,
+  genero varchar(50),
+  PRIMARY KEY (idMusica)
+);
+
 /*************************************/
 
 SELECT * FROM Mascotas;
@@ -36,6 +45,11 @@ INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Pierina", 10,
 INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Boby", 18, "blanco");
 INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Ricardito", 7, "Blanco y marron");
 INSERT INTO Alumnos (idAlumno, nombre, edad, color) VALUES (null, "Oso", 23, "Negro");
+
+INSERT INTO Musicas (idMusica, nombre, precio, genero) VALUES (null, "the Cranberries", 50, "rock");
+INSERT INTO Musicas (idMusica, nombre, precio, genero) VALUES (null, "monkey dance", 90, "pop");
+INSERT INTO Musicas (idMusica, nombre, precio, genero) VALUES (null, "inolvidable", 80, "balada");
+
 /*************************************/
 
 /****** ACTUALIZAMOS REGISTROS *******/
