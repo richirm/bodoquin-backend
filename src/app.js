@@ -1,30 +1,15 @@
 const express = require('express');
 const app = express();
 
+/******* Base Datos ********/
 const database = require('./configuration/database');
+ /**************************/
+
+/******* Servicios ********/
+app.use('/educacion', require('./routes/educacion'));
+/**************************/
  
-app.get('/alumnos', function (req, res) {
-  database.conectar(
-    (connection) => {
-      connection.query(
-        `SELECT * FROM Alumnos 
-                  WHERE edad >= ${req.query.edadMin} 
-                  AND edad <= ${req.query.edadMax}`, 
-        (error, result) => {
-          if(!!error) {
-            res.send(error);
-          } else {
-            res.send(result);
-          }
-        }
-      );
-    }, 
-    (error) => {
-      res.send(error);
-    }
-  );  
-});
- 
+/******* Endpoints ********/
 app.get('/mascotas', function (req, res) {
   const mascotas = [
     {
@@ -89,20 +74,6 @@ app.get('/centrosTuristicos', function (req, res) {
   res.send(centrosTuristicos);
 });
 
-app.get('/cursos', function (req, res) {
-  const cursos = [
-    {
-      nombre: 'Fisica',
-      costo: 100
-    },
-    {
-      nombre: 'Quimica',
-      costo: 50
-    }
-  ];
-  res.send(cursos);
-});
-
 app.get('/comidas', function (req, res) {
   database.conectar(
     (connection) => {
@@ -123,8 +94,11 @@ app.get('/comidas', function (req, res) {
       res.send(error);
     }
   );  
-});
- 
+}); 
+/**************************/
+
+/******* Arranque ********/
 app.listen(3000, function () {
   console.log('La aplicación se ha levantado en el puerto 3000');
 });
+/**************************/

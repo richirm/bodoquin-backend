@@ -1,0 +1,5 @@
+/*
+  /centrosTuristicos
+  /musicas
+  /comidas
+*/
