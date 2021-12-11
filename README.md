@@ -43,6 +43,13 @@
             Payload => datos principales que envía el frontend
              - query params: => parametros que se envían en la url del endpoint
           Response: es la comunicación desde el backend hacia el frontend
+      - Pasos y etapas de un endpoint:
+          1.Definir el endpoint
+          2.Programar la lógica del endpoint
+          - recibir los parametros
+          - validaciones o lógicas
+          - acceder a la base datos
+          3.Responder con un json  
       
 3. Versionado:
     Es un número que indica la versión, estado o caracteristicas actuales de
