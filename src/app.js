@@ -7,29 +7,11 @@ const database = require('./configuration/database');
 
 /******* Servicios ********/
 app.use('/educacion', require('./routes/educacion'));
+app.use('/animales', require('./routes/animales'));
 /**************************/
  
 /******* Endpoints ********/
-app.get('/mascotas', function (req, res) {
-  const mascotas = [
-    {
-      nombre: 'Rufo',
-      edad: 8,
-      color: 'gris'
-    },
-    {
-      nombre: 'Ricardito',
-      edad: 6,
-      color: 'blanco'
-    },
-    {
-      nombre: 'Marco',
-      edad: 8,
-      color: 'crema'
-    }
-  ];
-  res.send(mascotas);
-});
+
 
 app.get('/musicas', function (req, res) {
   database.conectar(
