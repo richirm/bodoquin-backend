@@ -24,6 +24,40 @@ router.get('/alumnos', function (req, res) {
   );  
 });
 
+router.post('/alumno', function (req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `INSERT INTO Alumnos 
+            ( 
+              idAlumno, 
+              nombre, 
+              edad, 
+              color
+            ) VALUES 
+            ( 
+              null, 
+              "${req.body.nombre}", 
+              ${req.body.edad}, 
+              "${req.body.color}"
+            )`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send({
+              idAlumno: result.insertId
+            });
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
+    }
+  );  
+});
+
 router.get('/cursos', function (req, res) {
   const cursos = [
     {

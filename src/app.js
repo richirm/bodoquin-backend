@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 
+const bodyParser = require('body-parser');
+
+// parse application/json
+app.use(bodyParser.json());
+
 /******* Base Datos ********/
 const database = require('./configuration/database');
  /**************************/
