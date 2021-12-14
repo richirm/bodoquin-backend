@@ -58,6 +58,32 @@ router.post('/alumno', function (req, res) {
   );  
 });
 
+router.put('/alumno', function (req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `UPDATE Alumnos SET 
+          nombre = "${req.body.nombre}", 
+          edad = ${req.body.edad}, 
+          color = "${req.body.color}" 
+        WHERE idAlumno = ${req.body.idAlumno}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send({
+              idAlumno: req.body.idAlumno
+            });
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
+    }
+  );  
+});
+
 router.get('/cursos', function (req, res) {
   const cursos = [
     {
