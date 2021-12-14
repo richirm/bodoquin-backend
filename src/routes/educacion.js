@@ -62,11 +62,12 @@ router.put('/alumno', function (req, res) {
   database.conectar(
     (connection) => {
       connection.query(
-        `UPDATE Alumnos SET 
+        `UPDATE Alumnos 
+         SET 
           nombre = "${req.body.nombre}", 
           edad = ${req.body.edad}, 
           color = "${req.body.color}" 
-        WHERE idAlumno = ${req.body.idAlumno}`, 
+         WHERE idAlumno = ${req.body.idAlumno}`, 
         (error, result) => {
           if(!!error) {
             res.send(error);

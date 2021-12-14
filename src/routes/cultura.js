@@ -62,11 +62,12 @@ router.put('/musica', function (req, res) {
   database.conectar(
     (connection) => {
       connection.query(
-        `UPDATE Musicas SET 
+        `UPDATE Musicas 
+         SET 
           nombre = "${req.body.nombre}", 
           precio = ${req.body.precio}, 
           genero = "${req.body.genero}" 
-        WHERE idMusica = ${req.body.idMusica}`, 
+         WHERE idMusica = ${req.body.idMusica}`, 
         (error, result) => {
           if(!!error) {
             res.send(error);
@@ -83,7 +84,6 @@ router.put('/musica', function (req, res) {
     }
   );  
 });
-
 
 router.get('/centrosTuristicos', function (req, res) {
   const centrosTuristicos = [
@@ -166,11 +166,12 @@ router.put('/comida', function (req, res) {
   database.conectar(
     (connection) => {
       connection.query(
-        `UPDATE Comidas SET 
+        `UPDATE Comidas 
+         SET 
           nombre = "${req.body.nombre}", 
           precio = ${req.body.precio}, 
           ingrediente = "${req.body.ingrediente}" 
-        WHERE idComida = ${req.body.idComida}`, 
+         WHERE idComida = ${req.body.idComida}`, 
         (error, result) => {
           if(!!error) {
             res.send(error);
