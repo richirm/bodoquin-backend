@@ -135,4 +135,30 @@ router.post('/comida', function (req, res) {
   );  
 });
 
+router.put('/comida', function (req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `UPDATE Comidas SET 
+          nombre = "${req.body.nombre}", 
+          precio = ${req.body.precio}, 
+          ingrediente = "${req.body.ingrediente}" 
+        WHERE idComida = ${req.body.idComida}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send({
+              idComida: req.body.idComida
+            });
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
+    }
+  );  
+});
+
 module.exports = router;
