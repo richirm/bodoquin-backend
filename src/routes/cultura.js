@@ -24,6 +24,40 @@ router.get('/musicas', function (req, res) {
   );  
 });
 
+router.post('/comida', function (req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `INSERT INTO Comidas 
+            ( 
+              idComida, 
+              nombre, 
+              precio, 
+              ingrediente
+            ) VALUES 
+            ( 
+              null, 
+              "${req.body.nombre}", 
+              ${req.body.precio}, 
+              "${req.body.ingrediente}"
+            )`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send({
+              idComida: result.insertId
+            });
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
+    }
+  );  
+});
+
 router.get('/centrosTuristicos', function (req, res) {
   const centrosTuristicos = [
     {
