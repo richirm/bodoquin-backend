@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const database = require('../configuration/database');
+const database = require('../../configuration/database');
 
 router.get('/alumnos', function (req, res) {
   database.conectar(
@@ -83,20 +83,6 @@ router.put('/alumno', function (req, res) {
       res.send(error);
     }
   );  
-});
-
-router.get('/cursos', function (req, res) {
-  const cursos = [
-    {
-      nombre: 'Fisica',
-      costo: 100
-    },
-    {
-      nombre: 'Quimica',
-      costo: 50
-    }
-  ];
-  res.send(cursos);
 });
 
 module.exports = router;

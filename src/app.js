@@ -11,7 +11,8 @@ const database = require('./configuration/database');
  /**************************/
 
 /******* Modulos ********/
-app.use('/educacion', require('./routes/educacion'));
+app.use('/educacion', require('./routes/educacion/alumnos'));
+app.use('/educacion', require('./routes/educacion/cursos'));
 
 app.use('/cultura', require('./routes/cultura/comidas'));
 app.use('/cultura', require('./routes/cultura/musicas'));
