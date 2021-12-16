@@ -85,4 +85,25 @@ router.put('/comida', function (req, res) {
   );  
 });
 
+router.delete('/comida/:idComida', function(req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `DELETE FROM Comidas 
+         WHERE idComida = ${req.params.idComida}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send();
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
+    }
+  ); 
+});
+
 module.exports = router;
