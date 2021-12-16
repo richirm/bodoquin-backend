@@ -85,4 +85,25 @@ router.put('/musica', function (req, res) {
   );  
 });
 
+router.delete('/musica/:idMusica', function(req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `DELETE FROM Musicas 
+         WHERE idMusica = ${req.params.idMusica}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send();
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
+    }
+  ); 
+});
+
 module.exports = router;
