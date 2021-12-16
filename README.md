@@ -41,8 +41,9 @@
           Request: es la comunicación desde el frontend hacia el backend
             Header => datos generales que envía el frontend
             Payload => datos principales que envía el frontend
-             - query params: => parametros que se envían en la url del endpoint
+             - query params: => parametros adicionales que se envían en la url del endpoint
              - body params: => parametros que se envían en el contenido del request
+             - path params: => parametros de la url que se envían al endpoint
           Response: es la comunicación desde el backend hacia el frontend
       - Pasos y etapas de un endpoint:
           1.Definir el endpoint

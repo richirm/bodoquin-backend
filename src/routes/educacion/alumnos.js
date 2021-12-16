@@ -85,4 +85,25 @@ router.put('/alumno', function (req, res) {
   );  
 });
 
+router.delete('/alumno/:idAlumno', function(req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `DELETE FROM Alumnos 
+         WHERE idAlumno = ${req.params.idAlumno}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send();
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
+    }
+  ); 
+});
+
 module.exports = router;
