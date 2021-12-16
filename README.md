@@ -52,6 +52,12 @@
           - validaciones o lógicas
           - acceder a la base datos
           3.Responder con un json  
+      - CRUD:
+          Las siglas que significan todas las operaciones que se pueden realizar sobre una entidad
+          C: Consult => GET
+          R: Register => POST
+          U: Update => PUT
+          D: Delete => DELETE
       
 3. Versionado:
     Es un número que indica la versión, estado o caracteristicas actuales de
