@@ -21,9 +21,9 @@ app.use('/cultura', require('./routes/cultura/centros-turisticos'));
 app.use('/animales', require('./routes/animales/mascotas'));
 
 app.use('/productos', require('./routes/productos/reposteria'));
+app.use('/productos', require('./routes/productos/jugueteria'));
 app.use('/productos', require('./routes/productos/tecnologia'));
-app.use('/productos', require('./routes/productos/moda'));
-/**************************/
+app.use('/productos', require('./routes/productos/moda'));/**************************/
 
 /******* Arranque ********/
 app.listen(3000, function () {
