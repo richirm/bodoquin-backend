@@ -19,6 +19,8 @@ app.use('/cultura', require('./routes/cultura/musicas'));
 app.use('/cultura', require('./routes/cultura/centros-turisticos'));
 
 app.use('/animales', require('./routes/animales/mascotas'));
+
+app.use('/productos', require('./routes/productos/reposteria'));
 /**************************/
 
 /******* Arranque ********/
