@@ -90,12 +90,20 @@ router.put('/reposteria', function(req, res) {
   database.conectar(
     (connection) => {
       connection.query(
-        `SQL`,
+        `UPDATE Productos_Reposteria 
+         SET nombreImg = "${req.body.nombreImg}",
+             nombreCategoria = "${req.body.nombreCategoria}",
+             nombreProducto = "${req.body.nombreProducto}",
+             descripcionProducto = "${req.body.descripcionProducto}",
+             precioProducto = "${req.body.precioProducto}",
+             cantidadProducto = "${req.body.cantidadProducto}",
+             especificaciones = "${req.body.especificaciones}"
+         WHERE idProducto = ${req.body.idProducto}`,
         (error, result) => {
           if(!!error) {
             res.send(error);
           } else {
-            res.send(result);
+            res.send();
           }
         }
       );
@@ -110,12 +118,13 @@ router.delete('/reposteria/:idProducto', function(req, res) {
   database.conectar(
     (connection) => {
       connection.query(
-        `SQL`,
+        `DELETE FROM Productos_Reposteria 
+         WHERE idProducto = ${req.params.idProducto}`,
         (error, result) => {
           if(!!error) {
             res.send(error);
           } else {
-            res.send(result);
+            res.send();
           }
         }
       );
