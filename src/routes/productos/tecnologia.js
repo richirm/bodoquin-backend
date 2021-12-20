@@ -86,6 +86,55 @@ router.post('/tecnologia', function(req, res) {
   );
 });
 
+router.put('/tecnologia', function(req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `UPDATE Productos_Tecnologia 
+         SET nombreImg = "${req.body.nombreImg}",
+             nombreCategoria = "${req.body.nombreCategoria}",
+             nombreProducto = "${req.body.nombreProducto}",
+             descripcionProducto = "${req.body.descripcionProducto}",
+             precioProducto = "${req.body.precioProducto}",
+             cantidadProducto = "${req.body.cantidadProducto}",
+             especificaciones = "${req.body.especificaciones}"
+         WHERE idProducto = ${req.body.idProducto}`,
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send();
+          }
+        }
+      );
+    },
+    (error) => {
+      res.send(error);
+    }
+  );
+});
+
+router.delete('/tecnologia/:idProducto', function(req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `DELETE FROM Productos_Tecnologia 
+         WHERE idProducto = ${req.params.idProducto}`,
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send();
+          }
+        }
+      );
+    },
+    (error) => {
+      res.send(error);
+    }
+  );
+});
+
 module.exports = router;
 
 
