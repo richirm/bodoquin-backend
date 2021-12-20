@@ -43,6 +43,49 @@ router.get('/tecnologia/:idProducto', function(req, res) {
   );
 });
 
+router.post('/tecnologia', function(req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `INSERT INTO Productos_Tecnologia 
+            (
+              idProducto, 
+              nombreImg, 
+              nombreCategoria, 
+              nombreProducto, 
+              descripcionProducto, 
+              precioProducto, 
+              cantidadProducto, 
+              especificaciones
+            ) VALUES 
+            (
+              null, 
+              "${req.body.nombreImg}", 
+              "${req.body.nombreCategoria}", 
+              "${req.body.nombreProducto}", 
+              "${req.body.descripcionProducto}", 
+              ${req.body.precioProducto}, 
+              ${req.body.cantidadProducto}, 
+              "${req.body.especificaciones}"
+            )
+        `,
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send({
+              idProducto: result.insertId
+            });
+          }
+        }
+      );
+    },
+    (error) => {
+      res.send(error);
+    }
+  );
+});
+
 module.exports = router;
 
 
