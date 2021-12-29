@@ -6,6 +6,15 @@ const bodyParser = require('body-parser');
 // parse application/json
 app.use(bodyParser.json());
 
+/******* CORS ************/
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
+/**************************/
+
 /******* Base Datos ********/
 const database = require('./configuration/database');
  /**************************/
