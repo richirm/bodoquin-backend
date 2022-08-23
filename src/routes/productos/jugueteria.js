@@ -135,6 +135,153 @@ router.delete('/jugueteria/:idProducto', function(req, res) {
   );
 });
 
+router.get('/jugueteria/servicios/asistencia/controles', function(req, res) {
+  // Pendiente a la conexion a la BD
+  const controles = [
+  {
+      id: 'nombre',
+      label: 'Nombre',
+      tipo: 'input'
+    },
+    {
+      id: 'apellidoP',
+      label: 'Apellido P',
+      tipo: 'input'
+    },
+    {
+      id: 'apellidoM',
+      label: 'Apellido M',
+      tipo: 'input'
+    },
+    {
+      id: 'direccion',
+      label: 'Dirección',
+      tipo: 'input'
+    },
+    {
+      id: 'correo',
+      label: 'Correo',
+      tipo: 'input'
+      
+    },
+    {
+      id: 'telefono',
+      label: 'Teléfono',
+      tipo: 'input'
+    },
+    {
+      id: 'fecha',
+      label: 'fecha',
+      tipo: 'input'
+    },
+    {
+      id: 'descripcion',
+      label: 'Descripción',
+      tipo: 'textarea'
+    },
+    {
+      id: 'area',
+      label: 'Area',
+      tipo: 'input'
+    },
+    {
+      id: 'mensaje',
+      label: 'Mensaje',
+      tipo: 'textarea'
+    }
+  ];
+  
+  res.send(controles);
+});
+
+router.get('/jugueteria/servicios/averias/controles', function(req, res) {
+  // Pendiente a la conexion a la BD
+  const controles = [
+  {
+      id: 'codProducto',
+      label: 'Código producto',
+      tipo: 'input'
+    },
+    {
+      id: 'marca',
+      label: 'Marca',
+      tipo: 'input'
+    },
+    {
+      id: 'area',
+      label: 'Area',
+      tipo: 'input'
+    },
+    {
+      id: 'correo',
+      label: 'Correo',
+      tipo: 'input'
+      
+    },
+    {
+      id: 'telefono',
+      label: 'Teléfono',
+      tipo: 'input'
+    },
+    {
+      id: 'fecha',
+      label: 'fecha',
+      tipo: 'input'
+    },
+    {
+      id: 'descripcion',
+      label: 'Descripción',
+      tipo: 'textarea'
+    }
+  ];
+  
+  res.send(controles);
+});
+
+router.get('/jugueteria/servicios/artefactos/controles', function(req, res) {
+  // Pendiente a la conexion a la BD
+  const controles = [
+    {
+      id: 'producto',
+      label: 'Producto',
+      tipo: 'input'
+    },
+    {
+      id: 'marca',
+      label: 'Marca',
+      tipo: 'input'
+    },
+    {
+      id: 'tamanio',
+      label: 'Tamaño',
+      tipo: 'input'
+    },
+    {
+      id: 'color',
+      label: 'Color',
+      tipo: 'input'
+      
+    },
+    {
+      id: 'telefono',
+      label: 'Teléfono',
+      tipo: 'input'
+    },
+    {
+      id: 'fecha',
+      label: 'fecha',
+      tipo: 'input'
+    },
+    {
+      id: 'descripcion',
+      label: 'Descripción',
+      tipo: 'textarea'
+    }
+  ];
+  
+  res.send(controles);
+});
+
 module.exports = router;
 
 
