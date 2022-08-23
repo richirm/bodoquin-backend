@@ -135,6 +135,136 @@ router.delete('/tecnologia/:idProducto', function(req, res) {
   );
 });
 
+router.get('/tecnologia/servicios/asistencia/controles', function(req, res){
+  //Pendiente la conexion a la BD
+  const controles = [
+    {
+      id: 'nombre',
+      label: 'Nombre',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'apellidoP',
+      label: 'Apellido P',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'apellidoM',
+      label: 'Apellido M',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'direccion',
+      label: 'Dirección',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'correo',
+      label: 'Correo',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'telefono',
+      label: 'Telefono',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'descripcion',
+      label: 'Descripción',
+      tipo: 'textarea'
+    },
+    
+    {
+      id: 'sugerencia',
+      label: 'Sugerencia',
+      tipo: 'textarea'
+    }
+  ];
+  res.send(controles);
+});
+
+router.get('/tecnologia/servicios/soporte/controles', function(req, res){
+  //Pendiente la conexion a la BD
+  const controles = [
+    {
+      id: 'codProducto',
+      label: 'Codigo Producto',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'nomProducto',
+      label: 'Nombre Producto',
+      tipo: 'input'
+    },
+    {
+      id: 'fecha',
+      label: 'Fecha',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'hora',
+      label: 'Hora',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'descripcion',
+      label: 'Descripcion',
+      tipo: 'textarea'
+    },
+    
+    {
+      id: 'problema',
+      label: 'Problema',
+      tipo: 'textarea'
+    }
+  ];
+  res.send(controles);
+});
+
+router.get('/tecnologia/servicios/reparacion/controles', function(req, res){
+  //Pendiente la conexion a la BD
+  const controles = [
+    {
+      id: 'codProducto',
+      label: 'Codigo Producto',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'nomProducto',
+      label: 'Nombre Producto',
+      tipo: 'input'
+    },
+    {
+      id: 'local',
+      label: 'Local',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'hora',
+      label: 'Hora',
+      tipo: 'input'
+    },
+    
+    {
+      id: 'averia',
+      label: 'Averia',
+      tipo: 'textarea'
+    }
+  ];
+  res.send(controles);
+});
+
 module.exports = router;
 
 
