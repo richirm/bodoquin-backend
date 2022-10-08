@@ -6,6 +6,18 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'bodoquin
 flush privileges;
 /************************************/
 
+/******** CREA TABLA USUARIOS ******/
+CREATE TABLE Usuaiors (
+idUsuario
+username varchar
+password varchar
+nombres varchar
+apellidoPaterno varchar
+apellidoMaterno varchar
+estado varchar
+PRIMARY KEY(idUsuario)
+),
+/************************************/
 /******** CREA TABLA REPOSTERIA ******/
 CREATE TABLE Productos_Reposteria (
   idProducto int NOT NULL AUTO_INCREMENT,
@@ -50,6 +62,20 @@ CREATE TABLE Productos_Tecnologia (
 
 /********** CREA TABLA MODA **********/
 CREATE TABLE Productos_Moda (
+  idProducto int NOT NULL AUTO_INCREMENT,
+  nombreImg varchar(255),
+  nombreCategoria varchar(255),
+  nombreProducto varchar(255),
+  descripcionProducto varchar(255),
+  precioProducto decimal(8,2),
+  cantidadProducto  int,
+  especificaciones varchar(1000),
+  PRIMARY KEY (idProducto)
+);
+/*************************************/
+
+/********** CREA TABLA Videojuegos **********/
+CREATE TABLE Productos_Videojuegos (
   idProducto int NOT NULL AUTO_INCREMENT,
   nombreImg varchar(255),
   nombreCategoria varchar(255),
@@ -128,4 +154,10 @@ INSERT INTO Productos_Moda (idProducto, nombreImg, nombreCategoria, nombreProduc
 INSERT INTO Productos_Moda (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "labial.jpg", "Labial", "Labial mate", "Sabor fresa y extra duracion", 50, 0, "Fecha de vencimiento: 01/11/2025|Elaborado por: Boutique Bodoquin|Ingredientes: componentes de calidad.");
 
 SELECT * FROM Productos_Moda;
+/*************************************/
+
+/******** INSERTA DATA Videojuegos **********/
+INSERT INTO Productos_Videojuegos (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "ps4-consola.jpg", "Consolas", "Consola ps4", "Consola ps4 500 gb ", 1599, 0, "Fecha de produccion: 01/11/2020|Elaborado por: Sony.");
+
+SELECT * FROM Productos_Videojuegos;
 /*************************************/
