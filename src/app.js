@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 /******* CORS ************/
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization");
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
@@ -33,6 +33,7 @@ app.use('/productos', require('./routes/productos/reposteria'));
 app.use('/productos', require('./routes/productos/jugueteria'));
 app.use('/productos', require('./routes/productos/tecnologia'));
 app.use('/productos', require('./routes/productos/moda'));
+app.use('/productos', require('./routes/productos/videojuegos'));
 
 app.use('/seguridad', require('./routes/seguridad/seguridad'));
 /**************************/
