@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const database = require('../configuration/database');
+const database = require('../../configuration/database');
 
 router.get('/mascotas', function (req, res) {
   const mascotas = [

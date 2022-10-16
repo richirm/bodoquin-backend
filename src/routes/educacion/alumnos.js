@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const database = require('../configuration/database');
+const database = require('../../configuration/database');
 
 router.get('/alumnos', function (req, res) {
   database.conectar(
@@ -58,18 +58,52 @@ router.post('/alumno', function (req, res) {
   );  
 });
 
-router.get('/cursos', function (req, res) {
-  const cursos = [
-    {
-      nombre: 'Fisica',
-      costo: 100
-    },
-    {
-      nombre: 'Quimica',
-      costo: 50
+router.put('/alumno', function (req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `UPDATE Alumnos 
+         SET 
+          nombre = "${req.body.nombre}", 
+          edad = ${req.body.edad}, 
+          color = "${req.body.color}" 
+         WHERE idAlumno = ${req.body.idAlumno}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send({
+              idAlumno: req.body.idAlumno
+            });
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
     }
-  ];
-  res.send(cursos);
+  );  
+});
+
+router.delete('/alumno/:idAlumno', function(req, res) {
+  database.conectar(
+    (connection) => {
+      connection.query(
+        `DELETE FROM Alumnos 
+         WHERE idAlumno = ${req.params.idAlumno}`, 
+        (error, result) => {
+          if(!!error) {
+            res.send(error);
+          } else {
+            res.send();
+          }
+        }
+      );
+    }, 
+    (error) => {
+      res.send(error);
+    }
+  ); 
 });
 
 module.exports = router;
