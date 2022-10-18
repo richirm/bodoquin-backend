@@ -23,9 +23,3 @@ router.get('/ferreteria', function(req, res) {
 });
 
 module.exports = router;
-
-
-
-
-
-
