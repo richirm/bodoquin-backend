@@ -34,6 +34,7 @@ app.use('/productos', require('./routes/productos/jugueteria'));
 app.use('/productos', require('./routes/productos/tecnologia'));
 app.use('/productos', require('./routes/productos/moda'));
 app.use('/productos', require('./routes/productos/videojuegos'));
+app.use('/productos', require('./routes/productos/ferreteria'));
 
 app.use('/seguridad', require('./routes/seguridad/seguridad'));
 /**************************/
