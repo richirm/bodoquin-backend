@@ -102,6 +102,20 @@ CREATE TABLE Productos_Ferreteria (
 );
 /*************************************/
 
+/********** CREA TABLA Electrodomesticos **********/
+CREATE TABLE Productos_Electrodomesticos (
+  idProducto int NOT NULL AUTO_INCREMENT,
+  nombreImg varchar(255),
+  nombreCategoria varchar(255),
+  nombreProducto varchar(255),
+  descripcionProducto varchar(255),
+  precioProducto decimal(8,2),
+  cantidadProducto  int,
+  especificaciones varchar(1000),
+  PRIMARY KEY (idProducto)
+);
+/*************************************/
+
 /****** INSERTA DATA REPOSTERIA ******/
 INSERT INTO Productos_Reposteria (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "torta_chocolate_fresa.jpg", "", "Torta de leche de Óreo", "Torta rica en su sabor, ha ganado el premio internacional, hecha con agua manantial", 60.25, 0, "Fecha de vencimiento: 01/11/2021|Elaborado por: Panadería Bodoquin|Ingredientes: Galletas óreo, Leche, Huevos, etc.");
 INSERT INTO Productos_Reposteria (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "torta_selva_negra.jpg", "Torta húmeda", "Selva negra de cerezas", "Compuesta por capas de bizcochuelo de chocolate embebido en kirsch e intercaladas con nata y cerezas.", 55.50, 0, "Fecha de vencimiento: 01/11/2021|Elaborado por: Panadería Bodoquin|Ingredientes: Galletas óreo, Leche, Huevos, etc.");
@@ -181,4 +195,11 @@ INSERT INTO Productos_Ferreteria (idProducto, nombreImg, nombreCategoria, nombre
 INSERT INTO Productos_Ferreteria (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "taladro_percutor.jpg", "Taladro percutor ", "Taladros", "taladsro percutor  ", 987, 0, "Fecha de produccion: 01/05/2015|Elaborado por: Bosch.");
 
 SELECT * FROM Productos_Ferreteria;
+/*************************************/
+
+/******** INSERTA DATA Electrodomesticos **********/
+INSERT INTO Productos_Electrodomesticos (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "LavadoraSamsung.jpg", "Lavadora", "Lavadora Samsung", "Lavadora 17 kg", 699, 0, "Fecha de produccion: 01/05/2018|Elaborado por: Samsung.");
+INSERT INTO Productos_Electrodomesticos (idProducto, nombreImg, nombreCategoria, nombreProducto, descripcionProducto, precioProducto, cantidadProducto, especificaciones) VALUES (null, "Refrigeradora.jpg", "Refrigeradora", "Refrigeradora", "Refrigeradora 450 lt", 987, 0, "Fecha de produccion: 01/05/2015|Elaborado por: Bosch.");
+
+SELECT * FROM Productos_Electrodomesticos;
 /*************************************/
