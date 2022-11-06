@@ -36,6 +36,7 @@ app.use('/productos', require('./routes/productos/moda'));
 app.use('/productos', require('./routes/productos/videojuegos'));
 app.use('/productos', require('./routes/productos/ferreteria'));
 app.use('/productos', require('./routes/productos/electrodomesticos'));
+app.use('/productos', require('./routes/productos/productos-naturales'));
 
 app.use('/seguridad', require('./routes/seguridad/seguridad'));
 /**************************/
